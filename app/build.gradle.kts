@@ -53,7 +53,7 @@ dependencies {
 
     // Lifecycle
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // Jetpack Compose
     implementation(libs.androidx.activity.compose)
@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(platform(libs.androidx.compose.bom))
+
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
 
@@ -68,7 +69,14 @@ dependencies {
     implementation(libs.room.runtime)
     kapt(libs.room.compiler)
     implementation(libs.room.ktx)
-    
+
+    //Retrofit
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.converter.scalars)
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
