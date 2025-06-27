@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">infoNumber</string>
+    <string name="app_name">Info Number</string>
+    <string name="label_enter_number">Enter number</string>
+    <string name="btn_get_fact">Get a fact</string>
+    <string name="btn_get_fact_random">Get a fact about a random number</string>
+    <string name="details_title">Details</string>
+    <string name="details_number">Number</string>
+    <string name="details_description">Description</string>
+    <string name="details_response">Response</string>
+    <string name="back">back</string>
 </resources>

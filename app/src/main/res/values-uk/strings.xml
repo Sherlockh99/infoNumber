@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Інфо число</string>
+    <string name="label_enter_number">Введіть число</string>
+    <string name="btn_get_fact">Отримати факт</string>
+    <string name="btn_get_fact_random">Отримати факт про випадкове число</string>
+    <string name="details_title">Деталі</string>
+    <string name="details_number">Номер</string>
+    <string name="details_description">Опис</string>
+    <string name="details_response">Відповідь</string>
+    <string name="back">назад</string>
+</resources>

@@ -1,4 +1,4 @@
-package com.sh.work.infonumber.ui
+package com.sh.work.infonumber.ui.main
 
 import android.app.Application
 import androidx.compose.runtime.mutableStateListOf
@@ -10,7 +10,6 @@ import androidx.lifecycle.viewModelScope
 import com.sh.work.infonumber.api.RetrofitSingleton
 import com.sh.work.infonumber.dao.AppDatabase
 import com.sh.work.infonumber.entity.HistoryEntity
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.Date
 
@@ -53,6 +52,26 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 _histories.addAll(historyDao.getAll())
 
                 onSuccess()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    fun sendStaticQuery() {
+        viewModelScope.launch {
+            try {
+                val result = RetrofitSingleton.api.getRandomInfo()
+
+                val history = HistoryEntity(
+                    dateQuery = Date(),
+                    number = -1,
+                    description = result
+                )
+                historyDao.insert(history)
+
+                _histories.clear()
+                _histories.addAll(historyDao.getAll())
             } catch (e: Exception) {
                 e.printStackTrace()
             }
